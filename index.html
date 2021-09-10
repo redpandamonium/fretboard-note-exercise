@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+    Guitar fretboard exercise utility.
+    Copyright (C) 2021  Leon Suchy
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="Practice finding notes on the guitar fretboard">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<button id="info-toggle" onclick="toggleInfo()">i</button>
+  <div id="info" style="visibility: hidden">
+    <p>
+      Guitar exercise to improve the speed of finding notes on a fretboard.<br>
+      You can find instructions how this exercise works on the <a href="https://www.youtube.com/watch?v=PJddQ6Q0UDo">MusicTheoryForGuitar</a> YouTube channel (not affiliated).<br>
+      <br>
+      Made by Blaze.<br>
+      Code can be found on my <a href="https://github.com/redpandamonium/fretboard-note-exercise">Github</a>.<br>
+      Content licensed under GNU Public License 3.0, see <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">full license text</a>.<br>
+      Fretboard visualization from <a href="https://commons.wikimedia.org/wiki/File:Guitar_tablature_with_natural_notes.svg">Wikimedia</a>.
+    </p>
+  </div>
+
+  <main>
+
+    <div id="note-names"><p id="note-names-inner">AC♯</p></div>
+    <!--
+    <div id="next-button">
+      <button class="button-big" onclick="displayRandomNotes()">Next</button>
+    </div>
+    -->
+    <div id="controls">
+      <div id="controls-inner">
+
+        <div id="note-controls" class="controls-panel">
+          <label for="num-notes">Notes</label>
+          <input type="number" id="num-notes" class="number-input-small" name="quantity" min="1" max="7" value="2" oninput="setNumNotes()">
+          <label for="sharps-enable">♯</label>
+          <input type="checkbox" id="sharps-enable" name="sharps" value=true oninput="setSharps()" checked>
+          <label for="flats-enable">♭</label>
+          <input type="checkbox" id="flats-enable" name="flats" value=true oninput="setFlats()" checked>
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="metronome-controls" class="controls-panel">
+          <label for="metronome-beats" title="Beats per measure">Beats</label>
+          <input type="number" id="metronome-beats" class="number-input-small" name="beats" min="1" max="12" value="6" title="Beats per measure" oninput="setBeats()">
+          <label for="metronome-bpm">BPM</label>
+          <input type="number" id="metronome-bpm" class="number-input-small" name="bpm" min="0" max="500" value="60" step="10" oninput="setMetronomeBpm()">
+          <label for="metronome-volume">Volume</label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="metronome-volume" oninput="setMetronomeVolume()">
+        </div>
+      </div>
+
+      <div id="start-controls" class="controls-panel">
+        <button id="start-stop-button" class="button" onclick="toggleStartStop()">Start</button>
+      </div>
+    </div>
+
+    <div id="fretboard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Guitar_tablature_with_natural_notes.svg"
+           alt="Wikipedia: Guitar fretboard visualization"/>
+    </div>
+  </main>
+  <script src="metronome.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

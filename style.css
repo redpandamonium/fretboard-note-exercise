@@ -1,0 +1,210 @@
+/*
+    Guitar fretboard exercise utility.
+    Copyright (C) 2021  Leon Suchy
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-family: Helvetica, serif;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto 22em 5em;
+    grid-template-columns: auto 70% auto;
+    grid-template-areas:
+            ". notes ."
+            "fretboard fretboard fretboard"
+            ". controls .";
+    grid-gap: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+#note-names {
+
+    width: 100%;
+    height: 100%;
+
+    grid-area: notes;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#note-names > p {
+    text-wrap: none;
+    font-size: 20vw;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+}
+
+#controls {
+    margin: 1em;
+
+    grid-area: controls;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#controls-inner {
+    border: black solid 1px;
+    border-radius: 7px;
+
+    height: 100%;
+    padding: 0.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fretboard {
+    grid-area: fretboard;
+    justify-self: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    margin-bottom: 1.5em;
+}
+
+.controls-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+.controls-panel > label {
+    margin-right: 0.5em;
+}
+
+.controls-panel > input {
+    margin-right: 0.5em;
+}
+
+.button {
+
+    padding: 1em 3em;
+    height: 100%;
+
+    border: black solid 1px;
+    border-radius: 7px;
+
+    background-color: #fefefe;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+#next-button {
+
+    grid-area: next;
+
+    width: 10em;
+    height: 4em;
+
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fretboard > img {
+    height: 100%;
+}
+
+.number-input-small {
+    width: 5em;
+}
+
+.divider {
+    border-right: black solid 1px;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+#start-controls {
+    height: 100%;
+    margin-left: 1em;
+}
+
+#info-toggle {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    margin: 0;
+    border: black solid 1px;
+    background-color: inherit;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-style: italic;
+    font-family: Garamont, serif;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 500;
+}
+
+#info-toggle:hover {
+    background-color: whitesmoke;
+}
+
+#info {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 400px;
+    border: black solid 1px;
+    border-radius: 7px;
+    padding: 0.5em;
+    padding-left: 40px;
+    z-index: 100;
+}
+
+#info > p {
+    display: inline-block;
+}
