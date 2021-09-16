@@ -74,10 +74,15 @@ function displayRandomNotes() {
     let noteText = "";
 
     let numNotes = Math.min(options.notePool.length, options.numNotes);
-    let arr = getRandom(options.notePool, numNotes);
-    arr.forEach(elem => {
-        noteText += elem + " ";
-    });
+    let previousNotes = document.getElementById("note-names-inner").innerText + " ";
+
+    do {
+        noteText = "";
+        let arr = getRandom(options.notePool, numNotes);
+        arr.forEach(elem => {
+            noteText += elem + " ";
+        });
+    } while (noteText === previousNotes);
     document.getElementById("note-names-inner").innerText = noteText;
 }
 
