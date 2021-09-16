@@ -33,8 +33,8 @@ body {
 
 main {
     display: grid;
-    grid-template-rows: auto 22em 5em;
-    grid-template-columns: auto 70% auto;
+    grid-template-rows: auto 25em 5em;
+    grid-template-columns: auto 80% auto;
     grid-template-areas:
             ". notes ."
             "fretboard fretboard fretboard"
@@ -98,7 +98,7 @@ main {
     justify-content: center;
     width: 100%;
     margin: 10px;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 .controls-panel {
